@@ -1,54 +1,20 @@
-<script lang="ts">
-  import Counter from "./Counter.svelte";
+<script>
+  import '#lib/style.css';
+  let { data } = $props();
+
+  let compteur = $state(0);
+
+  function incrementer() {
+    compteur++;
+  }
 </script>
 
-<svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
-</svelte:head>
+<main class="demo">
 
-<section>
-  <h1>
-    <span class="welcome">
-      <enhanced:img
-        class="welcome-image"
-        src="#lib/images/svelte-welcome.png"
-        alt="Welcome"
-      />
-    </span>
-    sur le site du groupe W ! <br /> ce site a été construit avec SveldeKit
-  </h1>
+  <h1>Hello World !</h1>
+  <p>{data.message}</p>
 
-  A counter :
-  <Counter />
-</section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 0.6;
-  }
-
-  h1 {
-    width: 100%;
-  }
-
-  .welcome {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding: 0 0 calc(100% * 495 / 2048) 0;
-  }
-
-  .welcome-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: block;
-  }
-</style>
+  <button onclick={incrementer}>
+    Nombre de clics : {compteur}
+  </button>
+</main>

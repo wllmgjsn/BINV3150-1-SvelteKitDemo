@@ -1,0 +1,18 @@
+.demo {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.demo h1 {
+  color: #ff3e00;
+}
+
+.demo button {
+  background: #ff3e00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
